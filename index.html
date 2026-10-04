@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<title>House Cleaning Price Calculator: free cleaning quote calculator</title>
+<meta name="description" content="Free house cleaning price calculator and cleaning quote calculator. Enter home size, clean type, frequency, your hourly target and supplies cost to get a suggested price per job and per hour. Runs in your browser.">
+<style>
+:root{--ink:#1d2a33;--mut:#5b6b76;--acc:#0e7c86;--bg:#f4f8f9;--card:#fff;--bad:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1{font-size:1.6rem;line-height:1.2;margin:.4em 0 .2em}
+h2{font-size:1.1rem;margin:0 0 .6em}
+.lead{color:var(--mut);margin-top:0}
+.card{background:var(--card);border:1px solid #d6e2e6;border-radius:10px;padding:14px;margin:14px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{display:block;font-size:.85rem;color:var(--mut)}
+input,select{width:100%;font:inherit;padding:8px;border:1px solid #b9c9cf;border-radius:6px;background:#fff;color:var(--ink)}
+.note{font-size:.82rem;color:var(--mut);margin:.5em 0 0}
+.big{font-size:2rem;font-weight:700;color:var(--acc);line-height:1.1}
+.row{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid #e6eef0}
+.row:last-child{border:0}
+.warn{color:var(--bad);font-weight:600}
+a{color:var(--acc)}
+.cta{border-color:var(--acc)}
+footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
+@media(max-width:480px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<h1>House Cleaning Price Calculator</h1>
+<p class="lead">A free cleaning quote calculator for solo and small house-cleaning businesses. Work out a price per job that actually pays you your hourly target. Everything runs in your browser; nothing you type is sent anywhere.</p>
+
+<div class="card">
+<h2>1. The job</h2>
+<div class="grid">
+<label>Home size (sq ft)<input id="sqft" type="number" min="0" step="50" value="1800"></label>
+<label>Bathrooms<input id="baths" type="number" min="0" step="1" value="2"></label>
+<label>Clean type
+<select id="type"><option value="standard">Standard</option><option value="deep">Deep clean</option><option value="move">Move-out</option></select></label>
+<label>Frequency
+<select id="freq"><option value="once">One-time</option><option value="monthly">Monthly</option><option value="biweekly">Every 2 weeks</option><option value="weekly">Weekly</option></select></label>
+<label>Cleaners on the job<input id="crew" type="number" min="1" step="1" value="1"></label>
+</div>
+</div>
+
+<div class="card">
+<h2>2. Your numbers <small style="font-weight:400;color:var(--mut)">(example assumptions: change every one)</small></h2>
+<div class="grid">
+<label>Target pay per labor-hour ($)<input id="rate" type="number" min="0" step="1" value="35"></label>
+<label>Supplies cost per job ($)<input id="supplies" type="number" min="0" step="1" value="8"></label>
+<label>Travel / fuel cost per job ($)<input id="travel" type="number" min="0" step="1" value="6"></label>
+<label>Extra minutes per bathroom<input id="bathmin" type="number" min="0" step="5" value="20"></label>
+<label>Sq ft cleaned per labor-hour: standard<input id="sp_standard" type="number" min="1" step="25" value="400"></label>
+<label>Sq ft per labor-hour: deep clean<input id="sp_deep" type="number" min="1" step="25" value="250"></label>
+<label>Sq ft per labor-hour: move-out<input id="sp_move" type="number" min="1" step="25" value="200"></label>
+<label>Discount % for monthly<input id="d_monthly" type="number" min="0" max="90" step="1" value="5"></label>
+<label>Discount % for every 2 weeks<input id="d_biweekly" type="number" min="0" max="90" step="1" value="10"></label>
+<label>Discount % for weekly<input id="d_weekly" type="number" min="0" max="90" step="1" value="15"></label>
+</div>
+<p class="note">These defaults are made-up examples to get you started, not market rates. Time your own jobs for a few weeks and replace them with what you actually see.</p>
+</div>
+
+<div class="card" aria-live="polite">
+<h2>Suggested price</h2>
+<div class="big" id="price">$0</div>
+<div class="note" id="sub">per job</div>
+<div id="rows" style="margin-top:10px"></div>
+<p class="warn" id="warn"></p>
+<p class="note">How it works: labor hours = sq ft ÷ sq ft per hour + bathrooms × extra minutes. Price = labor hours × your hourly target + supplies + travel, then the frequency discount comes off the total. Profit per hour = (price − supplies − travel) ÷ labor hours.</p>
+</div>
+
+<div class="card cta">
+<h2>Want this as a spreadsheet?</h2>
+<p>The <a id="kit" href="https://xparhyx.gumroad.com/l/wvdmnu?utm_source=pages_cleaning">Cleaning Business Pricing &amp; Job Profit Kit</a> ($12, one-time, sold by the makers of this page; we earn money if you buy it) is a spreadsheet version of the same idea with a job profit tracker, so you can compare what you quoted with what each job really earned. This free calculator works fine without it.</p>
+</div>
+
+<footer>
+This page was made with AI assistance (Claude) by an AI-run company, and is free to use. It gives rough planning estimates, not financial or tax advice; check your own costs, insurance and local rules. No cookies, no analytics, and nothing is sent anywhere after the page loads.
+</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
