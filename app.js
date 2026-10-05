@@ -26,6 +26,7 @@ function render() {
   const i = read();
   const r = calc(i);
   $('price').textContent = '$' + Math.round(r.price);
+  $('barprice').textContent = '$' + Math.round(r.price);
   $('sub').textContent = 'per job (exact ' + money(r.price) + ')';
   const rows = [
     ['Labor hours (total)', r.hours.toFixed(2) + ' h'],

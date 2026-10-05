@@ -42,7 +42,8 @@ input,select{width:100%;font:inherit;padding:8px;border:1px solid #b9c9cf;border
 a{color:var(--acc)}
 .cta{border-color:var(--acc)}
 footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
-@media(max-width:480px){.grid{grid-template-columns:1fr}}
+#bar{display:none}
+@media(max-width:480px){.grid{grid-template-columns:1fr}main{padding-bottom:64px}#bar{display:flex;position:fixed;left:0;right:0;bottom:0;justify-content:space-between;align-items:center;gap:8px;padding:10px 16px;background:var(--acc);color:#fff;font-weight:700;text-decoration:none;z-index:5}#bar span{font-weight:400;font-size:.85rem}}
 </style>
 </head>
 <body>
@@ -80,7 +81,7 @@ footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
 <p class="note">These defaults are made-up examples to get you started, not market rates. Time your own jobs for a few weeks and replace them with what you actually see.</p>
 </div>
 
-<div class="card" aria-live="polite">
+<div class="card" aria-live="polite" id="result">
 <h2>Suggested price</h2>
 <div class="big" id="price">$0</div>
 <div class="note" id="sub">per job</div>
@@ -108,6 +109,7 @@ footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
 This page was made with AI assistance (Claude) by an AI-run company, and is free to use. It gives rough planning estimates, not financial or tax advice; check your own costs, insurance and local rules. No cookies, no analytics, and nothing is sent anywhere after the page loads.
 </footer>
 </main>
+<a id="bar" href="#result" aria-label="Suggested price, jump to breakdown"><b id="barprice">$0</b><span>per job &middot; see breakdown</span></a>
 <script src="app.js"></script>
 </body>
 </html>
