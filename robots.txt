@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://megatronjeremy.github.io/house-cleaning-price-calculator/sitemap.xml

@@ -4,8 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'none'">
-<title>House Cleaning Price Calculator: free cleaning quote calculator</title>
-<meta name="description" content="Free house cleaning price calculator and cleaning quote calculator. Enter home size, clean type, frequency, your hourly target and supplies cost to get a suggested price per job and per hour. Runs in your browser.">
+<title>How Much to Charge for House Cleaning: Price Calculator</title>
+<meta name="description" content="Free house cleaning price calculator: enter home size, clean type, frequency and your hourly target to see a price per job and your pay per hour.">
+<link rel="canonical" href="https://megatronjeremy.github.io/house-cleaning-price-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Much to Charge for House Cleaning: Price Calculator">
+<meta property="og:description" content="Free house cleaning price calculator: enter home size, clean type, frequency and your hourly target to see a price per job and your pay per hour.">
+<meta property="og:url" content="https://megatronjeremy.github.io/house-cleaning-price-calculator/">
+<meta property="og:image" content="https://megatronjeremy.github.io/house-cleaning-price-calculator/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="House cleaning price calculator showing a suggested price per job">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much to Charge for House Cleaning: Price Calculator">
+<meta name="twitter:description" content="Free house cleaning price calculator: enter home size, clean type, frequency and your hourly target to see a price per job and your pay per hour.">
+<meta name="twitter:image" content="https://megatronjeremy.github.io/house-cleaning-price-calculator/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"House Cleaning Price Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"inLanguage":"en","url":"https://megatronjeremy.github.io/house-cleaning-price-calculator/","description":"Free house cleaning price calculator: enter home size, clean type, frequency and your hourly target to see a price per job and your pay per hour.","image":"https://megatronjeremy.github.io/house-cleaning-price-calculator/og.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I price a house cleaning job?","acceptedAnswer":{"@type":"Answer","text":"Estimate the labor hours (home size divided by the square feet you clean per hour, plus extra time for each bathroom), multiply by the hourly pay you want, then add supplies and travel. The calculator above does this for you."}},{"@type":"Question","name":"Should I charge by the hour or a flat price per job?","acceptedAnswer":{"@type":"Answer","text":"Many cleaners quote a flat price per job but work it out from hours first, as this calculator does, so the quote still covers the time the job really takes."}},{"@type":"Question","name":"How much discount should I give for repeat customers?","acceptedAnswer":{"@type":"Answer","text":"That is your decision. The calculator warns you when a discount pushes your pay per labor-hour below your target. The defaults of 5%, 10% and 15% are examples, not market rates."}}]}</script>
 <style>
 :root{--ink:#1d2a33;--mut:#5b6b76;--acc:#0e7c86;--bg:#f4f8f9;--card:#fff;--bad:#b3261e}
 *{box-sizing:border-box}
@@ -13,6 +28,7 @@ body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;c
 main{max-width:720px;margin:0 auto;padding:16px}
 h1{font-size:1.6rem;line-height:1.2;margin:.4em 0 .2em}
 h2{font-size:1.1rem;margin:0 0 .6em}
+h3{font-size:1rem;margin:.9em 0 .2em}
 .lead{color:var(--mut);margin-top:0}
 .card{background:var(--card);border:1px solid #d6e2e6;border-radius:10px;padding:14px;margin:14px 0}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -31,7 +47,7 @@ footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
 </head>
 <body>
 <main>
-<h1>House Cleaning Price Calculator</h1>
+<h1>How Much to Charge for House Cleaning: Price Calculator</h1>
 <p class="lead">A free cleaning quote calculator for solo and small house-cleaning businesses. Work out a price per job that actually pays you your hourly target. Everything runs in your browser; nothing you type is sent anywhere.</p>
 
 <div class="card">
@@ -71,6 +87,16 @@ footer{font-size:.8rem;color:var(--mut);padding:8px 0 24px}
 <div id="rows" style="margin-top:10px"></div>
 <p class="warn" id="warn"></p>
 <p class="note">How it works: labor hours = sq ft ÷ sq ft per hour + bathrooms × extra minutes. Price = labor hours × your hourly target + supplies + travel, then the frequency discount comes off the total. Profit per hour = (price − supplies − travel) ÷ labor hours.</p>
+</div>
+
+<div class="card">
+<h2>Cleaning price FAQ</h2>
+<h3>How do I price a house cleaning job?</h3>
+<p>Estimate the labor hours (home size divided by the square feet you clean per hour, plus extra time for each bathroom), multiply by the hourly pay you want, then add supplies and travel. The calculator above does this for you.</p>
+<h3>Should I charge by the hour or a flat price per job?</h3>
+<p>Many cleaners quote a flat price per job but work it out from hours first, as this calculator does, so the quote still covers the time the job really takes.</p>
+<h3>How much discount should I give for repeat customers?</h3>
+<p>That is your decision. The calculator warns you when a discount pushes your pay per labor-hour below your target. The defaults of 5%, 10% and 15% are examples, not market rates.</p>
 </div>
 
 <div class="card cta">
